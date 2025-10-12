@@ -69,21 +69,21 @@ image sd_sad:
 
 # Kaorin
 image kh_blushing:
-    "kaorin/kaorin_blushing.png"
+    "karoin/karoin_blushing.png"
     zoom 0.35
 
 image kh_neutral:
-    "kaorin/kaorin_neutral.png"
+    "karoin/karoin_neutral.png"
     zoom 0.35
 
 image kh_happy:
-    "kaorin/kaorin_happy.png"
+    "karoin/karoin_happy.png"
     zoom 0.35
 
 image kh_angry:
-    "kaorin/kaorin_angry.png"
+    "karoin/karoin_angry.png"
     zoom 0.35
 
 image kh_sad:
-    "kaorin/kaorin_sad.png"
+    "karoin/karoin_sad.png"
     zoom 0.35

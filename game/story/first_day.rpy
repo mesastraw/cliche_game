@@ -93,11 +93,11 @@ menu late_to_school_options:
 
     "Well not much I can do about it now (Eat breakfest and brisk walk to school)":
         $ day_one_chosen_variation = 1
-        jump karoin_route
+        jump first_day_variation_two
 
     "First day is never that serious (Walk to school)":
         $ day_one_chosen_variation = 1
-        jump sd_route
+        jump first_day_variation_three
 
 label first_day_variation_one:
 
@@ -172,8 +172,79 @@ label route_one_end:
         vc "Can we hurry now? I need perfect attendance this year."
         jump first_day_scene_one
 
-label first_day_variation_two:
 
+
+label first_day_variation_two:
+    # Add walking animation here
+    scene bg road with vpunch:
+        xzoom 1.6 yzoom 1.5
+
+    "why do those damn witches demand a sacrifice anyway?" 
+    extend "\nDo they not stand for the same flag as the rest of us?\n" 
+    extend "Do they not care for their own countrywomen?\n"
+    extend "And surely whichever the sacrificial trope would also stop existing within their ranks. Something seems-"
+
+    ys "Whoa watch out-"
+
+    scene bg bang with vpunch:
+        xzoom 2.5 yzoom 1.5
+    "BANG!!" # Possible sound effect her
+    # Animatge
+
+    scene bg road:
+        xzoom 1.6 yzoom 1.5
+
+    show kh_blushing at center
+ 
+    kh "OH MY GOSH MISS YURI! Are you okay??"
+
+    sim "Kaorin Womenlover, your junior and head of the Secret Yuri San Fanclub"
+    
+    ys "{i}head of the {b}what??{/i}{/b}"
+    
+    ys "ow ow ouchie ow ow yowch"
+
+    hide kh_blushing
+    show kh_sad at center
+
+    kh "I’M SO SORRY YURI SAN! FORGIVE ME PLEASE"   
+
+    menu:
+        "Aren’t you hurt too?":
+            hide kh_sad
+            show kh_happy at center
+
+            kh "Oh you see I was born hard headed. When I was born my nurse dropped me and my skull left a crack in the floor."
+            
+            # Mc gets up
+            show kh_happy at left
+            show ys_sprite at right
+
+            ys "Explains a lot"
+
+        "It’s okay, I’m fine, I’ll be all right":
+            kh "are you sure? you look very.. Green"
+
+            ys "Thats just my complexion- *throws up*"
+
+            hide kh_blushing
+            show kh_sad at center
+
+            kh "Oh no oh no oh no oh no."
+            extend " I’m calling an ambulance!"
+
+            ys"No wait, "
+            show kh_sad at left
+            show ys_sprite at right
+            extend "I'm fine now."
+
+    ys "Run to school with me?" 
+    
+    show kh_blushing at left
+
+    kh "C-can I?!"
+
+    jump first_day_scene_one
 
 # Second scene school where they arrive after the 3 meeting scenarios
 label first_day_scene_one:
