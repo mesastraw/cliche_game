@@ -1626,6 +1626,8 @@ screen day_screen:
     frame:
         xalign 1.0
         ypos 0
+        background Solid("#ffe4e1")
 
         vbox:
-            text "Day: [day_number]" 
+            text "{color=#000}Day: [day_number]{/color}" 
+

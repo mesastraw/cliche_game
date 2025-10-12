@@ -1,3 +1,5 @@
+default day_one_chosen_variation = 0
+
 # TODO: Add images
 label day_one: 
 
@@ -58,7 +60,12 @@ label day_one:
     "As punishment, the nation that had cut their salaries in half must sacrifice one of its most valued treasures."
 
     "You, as representative of the people, must sacrifice a popular yuri trope, never to be seen again."
-    # Add x images
+
+    show x_mark at left
+    pause(1)
+    show x_mark at center
+    pause(1)
+    show x_mark at right 
 
     "According to your wishes, we, your most trusted yuri scientists, have temporarily wiped your memory and placed you within this simulation. At the end of the simulation you must make The Sacrifice for Yuristan."
 
@@ -69,6 +76,10 @@ label day_one:
     # Day one starts
     show screen day_screen
 
+    scene bedroom
+    
+    show ys_sprite
+
     ys "Oh No! I'm late!!"
 
     call late_to_school_options
@@ -77,40 +88,50 @@ label day_one:
 menu late_to_school_options:
     
     "Oh god I can't be late on the first day! (Run to school)":
+        $ day_one_chosen_variation = 1
         jump first_day_variation_one
-        return
 
     "Well not much I can do about it now (Eat breakfest and brisk walk to school)":
+        $ day_one_chosen_variation = 1
         jump karoin_route
 
     "First day is never that serious (Walk to school)":
+        $ day_one_chosen_variation = 1
         jump sd_route
-
 
 label first_day_variation_one:
 
     # Add shake scene
-    scene bg road with vpunch
-    scene bg road with vpunch
-    scene bg road with vpunch
-    scene bg road with vpunch
+    scene bg road with vpunch:
+        xzoom 1.6 yzoom 1.5
+    scene bg road with vpunch:
+        xzoom 1.6 yzoom 1.5
+    scene bg road with vpunch:
+        xzoom 1.6 yzoom 1.5
+    scene bg road with vpunch:
+        xzoom 1.6 yzoom 1.5
     
     "why do those damn witches demand a sacrifice anyway?" 
     extend "\nDo they not stand for the same flag as the rest of us?\n" 
     extend "Do they not care for their own countrywomen?\n"
-    extend "And surely whichever the sacrificial trope would also stop existing within their ranks.\nSomething seems-"
+    extend "And surely whichever the sacrificial trope would also stop existing within their ranks. Something seems-"
 
     vc "Yuri-Saaan! Yuri-San wait up!"
     vc "Oh crap."
 
-    scene bg bang with vpunch
-    "BANG!" # Possible sound effect her
+    scene bg bang with vpunch:
+        xzoom 2.5 yzoom 1.5
+    "BANG!!" # Possible sound effect her
+
+    scene bg road:
+        xzoom 1.6 yzoom 1.5
 
     vc "Yowch owch ow"
 
-    ys "*I wonder what trope she could possible represent. Quite puzzling.*"
+    show ys_sprite at left
+    show vc_neutral at right
 
-    show vc_neutral at Position(xalign = 0.5, yalign = 0.5)
+    ys "*I wonder what trope she could possible represent. Quite puzzling.*"
 
     vc "I'm okay, I'm fine"
 
@@ -122,15 +143,37 @@ label first_day_variation_one:
 
                 menu meeting_sub_1:
                     "Don't want to":
-                        show cere_blushing
+                        hide vc_neutral
+                        show vc_blushing at right
                         
                         # They hold hands?
                         vc "D-don’t be silly we’re going to be late for school!"
                         ys "If you really want me to"
-                        jump first_day_scene_one
+                        jump route_one_end
 
                     "sure":
-                        jump first_day_scene_one
+                        jump route_one_end
+
+        "How did you fall anyway?":
+            vc "Another stupid pothole."
+            extend " Useless Yuristan government"
+
+            ys "Hey now, funding is really tight you know. I’m sure they’ll fix them eventually."
+
+            vc "Funding wouldn't be so tight if they didn’t spend so much on that idiotic Yuri Festival."
+
+            ys "We can’t put patching potholes above celebrating our heritage Cere."
+
+            vc "All I know is back home in the Great Straight Empire, we didn’t have a Yuri Festival, and we also didn’t have potholes."
+
+    jump route_one_end 
+
+label route_one_end:
+        vc "Can we hurry now? I need perfect attendance this year."
+        jump first_day_scene_one
+
+label first_day_variation_two:
+
 
 # Second scene school where they arrive after the 3 meeting scenarios
 label first_day_scene_one:
