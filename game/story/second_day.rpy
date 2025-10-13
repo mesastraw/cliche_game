@@ -246,7 +246,8 @@ label book_sale_route:
     scene house_front with fade:
         xzoom 3.14 yzoom 2.6
     
-    show planks at center
+    show planks at center:
+        zoom 5
     
     show ys_sprite at left
 
@@ -255,12 +256,11 @@ label book_sale_route:
     sd "Did you bring the screws?"
 
     ys "Yeah I bought all four!"
+    show three_screws_test at left
+
     extend " Wait a second, one"
-    show screw_one at left
     extend " Two"
-    show screw_two at left
     extend " Three"
-    show screw_three at left
 
     hide sd_happy
     show sd_angry at right
@@ -270,29 +270,21 @@ label book_sale_route:
     ys "uha"
     extend " Wait!"
     extend " Found it"
-    show screw_fourth at left
-    extend "We almost got screwed there"
+    hide three_screws_test
+    show four_screws_test at left
+    extend " We almost got screwed there"
     # Sound effect
 
     sd "Go die."
-    "test"
-
-    hide ys_sprite
-    hide sd_angry
-
-    show ys_sprite at center
-    show sd_neutral at center
-    show cloud at center
 
     # Play lego brick sound effect
     # Shake clouds
     
-    hide ys_sprite
-    hide sd_neutral
-    hide planks
-    hide cloud
+    scene house_front with fade:
+        xzoom 3.14 yzoom 2.6
 
     show table
+
     show ys_sprite at left
     show sd_happy at right
 
