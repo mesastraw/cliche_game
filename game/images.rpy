@@ -23,6 +23,11 @@ image yaoikub:
     "yaoikub.png"
     zoom 0.35
 
+# Witch
+image witch:
+    "witch.png"
+    zoom 0.35
+
 # yuri silhouette
 image normal_silhouette = "yurisolhouette.png"
 
