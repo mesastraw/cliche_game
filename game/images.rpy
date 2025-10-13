@@ -18,6 +18,10 @@ image ys_sprite:
     "mc.png"
     zoom 0.35
 
+image ys_apron:
+    "mc_apron.png"
+    zoom 0.35
+
 # Yaoikub
 image yaoikub:
     "yaoikub.png"
@@ -59,6 +63,36 @@ image vc_exclimation:
 image vc_question:
     "vin_cere/vin_question.png"
     zoom 0.35
+
+image vc_blushing_apron:
+    "vin_cere/vin apron/CereApronBlush.PNG"
+    zoom 0.35
+
+image vc_neutral_apron:
+    "vin_cere/vin apron/CereApronNeutral.PNG"
+    zoom 0.35
+
+image vc_happy_apron: 
+    "vin_cere/vin apron/CereApronHappy.PNG"
+    zoom 0.35
+
+image vc_angry_apron:
+    "vin_cere/vin apron/CereApronAngry.PNG"
+    zoom 0.35
+
+image vc_sad_apron:
+    "vin_cere/vin apron/CereApronSad.PNG"
+    zoom 0.35
+
+image vc_exclimation_apron:
+    "vin_cere/vin apron/CereApronNeutralExclamation.PNG"
+    zoom 0.35
+
+image vc_question_apron:
+    "vin_cere/vin apron/CereApronNeutralQuestion.PNG"
+    zoom 0.35
+
+
 
 # Sune
 image sd_blushing:

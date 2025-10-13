@@ -13,14 +13,12 @@ label ending:
 
     menu: 
         "Why would you want a yuri trope gone?":
-            
+            # Add the big text here           
 
             jump final_choice
 
         "I have made my choice.":
             jump final_choice
-
-    "test"
 
 label final_choice:
     $ made_choice = ""
@@ -58,6 +56,7 @@ label final_choice:
     sci "y-yeah."
 
     scene hug
-    
-    "test"
+        
+    # Add credits
+
     return

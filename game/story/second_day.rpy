@@ -302,4 +302,194 @@ label book_sale_route:
     jump start
 
 label work_route:
-    "test"
+    scene cafe:
+        xzoom 3.0 yzoom 2.0
+
+    show ys_apron at left
+    show vc_neutral_apron at right
+    
+    ys "you never told me you worked at a maid cafe!"
+
+    hide vc_neutral_apron
+    show vc_angry_apron at right
+
+    vc "because I dont work at a maid cafe. This is a regular cafe."
+
+    ys "whatever you say.."
+    
+    vc "We’re not even wearing maid outfits!"
+
+    menu:
+        "What a shame..":
+            ys "What a shame.."
+
+            hide vc_angry_apron
+            show vc_blushing_apron at right
+
+            vc "Whats that supposed to mean??"
+            
+            menu:
+
+                "I’d love to see you in a maid outfit":
+                    vc "Hu-Whu- "
+                    extend " Shut up! We have customers!"
+
+                "Oh look! Customers!":
+                    pass
+
+        "Uh-huh":
+            vc "Whatever!"
+            extend " We've got customers"
+
+    hide vc_angry_apron
+    hide vc_blushing_apron
+    show vc_happy_apron at right
+    
+    vc "Hi! What can I get for you?"
+    
+    scene break_room with fade:
+        xzoom 2.7 yzoom 2.0
+
+    show ys_apron at left
+    show vc_sad_apron at right
+
+    vc "Since when is 6 PM rush hour??"
+
+
+    menu:
+        "You call that rush hour?":
+            ys " You call that rush hour? Hah."
+
+            hide vc_sad_apron
+            show vc_angry_apron at right
+
+            vc "I am going to physically assault you."
+
+            ys "I think the employee handbook says thats not allowed"
+
+        "Really needed this break":
+            ys "It’s crazy out there. I really needed this break."
+
+            vc "tell me about it."
+        
+    hide vc_angry_apron
+    show vc_neutral_apron at right
+
+    vc "I can’t wait to get out of here.."
+
+    ys "Our shift ends at eight right?"
+
+    vc "No I don’t mean out of work"
+    extend " I mean like out of this city, this country."
+
+    menu:
+        "Why?":
+            ys "What? Why? It’s great here!"
+
+            hide vc_neutral_apron
+            show vc_angry_apron at right
+
+            vc "For you maybe. All anyone ever talks about is yuri here. I mean for god sake, its literally your NAME. It pisses me off."
+            
+            ys "Yuri pisses you off?"
+            extend " Why?"
+
+            vc "You know my Moms a POS right?"
+
+            ys "Which one?"
+
+            vc "I only have one. That other witch’s blood doesn’t run through my veins."
+
+            ys "That’s a pretty harsh thing to say about your stepmom."
+
+            vc "I told you that harlot is not my mother! She’s just Mom’s latest replacement for Dad."
+
+        "I’m coming with you":
+            hide vc_neutral_apron
+            show vc_blushing_apron at right
+
+            vc "what? Why??"
+
+            ys "I’ll go wherever you go."
+
+            vc "whats that supposed to mean?"
+
+            ys "you’ll understand when your older."
+
+            vc "I don’t like women like that Yuri-San."
+
+            ys "For now.."
+
+            hide vc_blushing_apron
+            show vc_angry_apron at right
+
+            vc "No! Forever! I’m not going to end up like Mom."
+
+
+    hide vc_angry_apron
+    show vc_sad_apron at right
+
+    vc "You know after Dad died and we decided to move to Yuristan, I was actually pretty excited."
+    extend " I’d finally get to get away from all those memories"
+    extend " I could start anew "
+
+    vc "But Mom started anew as well. Every week it was a new woman. I was too small to understand, but she was throwing all our money at “companions”"
+    extend " We were never rich, but by the time I was old enough to understand that none of these women were ever meant to be an actual stepmom," 
+    extend " my mom was working two different jobs, just to keep going on more dates, while I went hungry at home."
+
+    hide vc_sad_apron
+    show vc_angry_apron at right
+
+    vc "Yuri fucking ruined my life."
+    extend " For some reason, maybe because it was WLW, my mom couldn’t see just how pathetic she was. Nor could anyone else."
+    extend " Aunts and cousins would all tell me that my mom was just “finding herself” and that I needed to give her time."
+    extend " All while I sat at their table eating my first actual meal in days. I learnt to nod my head and agree, because it always meant there was a next time, it kept me fed."
+
+    vc "But I knew, even as a kid, I knew my Mom was lost. And she definitely couldn’t “find herself”"
+    extend "  don’t think I could find her either."
+
+    menu:
+        "Can you really blame Yuri for that?":
+            vc "What else am I supposed to blame??"
+            extend " I have to get perfect grades while working two part time jobs, just so I can make it to University on a scholarship!"
+            extend "Who do I blame? What do I hold accountable?"
+            
+            ys "Try letting go."
+            extend " You're already fighting an uphill battle. The weight of your hatred, of your anger won't make it easier. Anger never lifts anything up Cere, it only weighs it down."
+
+            hide vc_angry_apron
+            show vc_sad_apron at right
+
+            extend " And sure, extra weight is helpful when you're rolling downhill, when you're destroying things, but that isn’t what you're trying to do."
+
+            vc "I don’t know. Maybe you're right. Maybe I’m holding on to something I don’t need. But I don’t know if I can let go. Not just yet."
+
+        "I don’t know why your mom did what she did. But I know you, I know you could never end up like her":
+            ys "I can’t defend your mom. I don't know why she did what she did. But I know that you aren’t like her."
+            extend " I know you could never do something like that. And you should know that if you were ever lost, If you were ever unable to find yourself, I would come find you."
+
+            hide vc_angry_apron
+            show vc_sad_apron at right
+
+            vc "I can’t believe you. Not yet."
+
+
+    ys "I’ll wait. As long as it takes."
+
+    hide vc_sad_apron
+    show vc_happy_apron at right
+    
+    vc "I know you will."
+    extend " Thank you."
+
+    ys "By the way how much are we getting paid for this?"
+
+    vc " Let’s see.."
+    extend " Ten Yuribucks an hour, for five hours, multiplied by two.."
+    extend " Around 100 Yuribucks."
+    
+    ys "Good god, someone needs to boost the minimum wage."
+
+    vc "Tell me about it"
+
+    jump ending

@@ -399,7 +399,7 @@ label first_day_scene_one:
             show kh_sad at right
 
             kh "oh yeah"
-            extend "Your leaving me behind"
+            extend " Your leaving me behind"
             
             ys "you’ll be fine, its only for a year. You're going to the National Yuriversity too right?"
 
