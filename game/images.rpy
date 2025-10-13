@@ -42,29 +42,46 @@ image vc_happy:
 image vc_angry:
     "vin_cere/vin_angry.png"
     zoom 0.35
+
 image vc_sad:
     "vin_cere/vin_sad.png"
     zoom 0.35
 
+image vc_exclimation:
+    "vin_cere/vin_exclimation.png"
+    zoom 0.35
+
+image vc_question:
+    "vin_cere/vin_question.png"
+    zoom 0.35
+
 # Sune
 image sd_blushing:
-    "sune_dere/sune_blushing.png"
+    "sune_derei/sune_blushing.png"
     zoom 0.35
 
 image sd_neutral:
-    "sune_dere/sune_neutral.png"
+    "sune_derei/sune_neutral.png"
     zoom 0.35
 
 image sd_happy:
-    "sune_dere/sune_happy.png"
+    "sune_derei/sune_happy.png"
     zoom 0.35
 
 image sd_angry:
-    "sune_dere/sune_angry.png"
+    "sune_derei/sune_angry.png"
     zoom 0.35
 
 image sd_sad:
-    "sune_dere/sune_sad.png"
+    "sune_derei/sune_sad.png"
+    zoom 0.35
+
+image sd_exclimation:
+    "sune_derei/sune_exclimation.png"
+    zoom 0.35
+
+image sd_question:
+    "sune_derei/sune_question.png"
     zoom 0.35
 
 # Kaorin
@@ -87,3 +104,11 @@ image kh_angry:
 image kh_sad:
     "karoin/karoin_sad.png"
     zoom 0.35
+
+
+image kh_exclimation:
+    "karoin/karoin_exclimation.png"
+    zoom 0.35
+
+image kh_question:
+    "karoin/karoin_question.png"

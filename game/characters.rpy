@@ -1,6 +1,8 @@
 # The Protagonist played by the player
 define sim = Character("Simulation")
 
+define unknown = Character("???")
+
 define ys = Character("Yuri San")
 
 define sd = Character("Sune Derei")

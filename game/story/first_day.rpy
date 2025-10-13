@@ -1,4 +1,5 @@
 default day_one_chosen_variation = 0
+default chosen_sale_option = 0
 
 # TODO: Add images
 label day_one: 
@@ -73,7 +74,9 @@ label day_one:
 
     "Good luck, miss president.\nGood luck Yuri-San."
 
-    # Day one starts
+    jump day_one_start
+
+label day_one_start:
     show screen day_screen
 
     scene bedroom
@@ -244,137 +247,401 @@ label first_day_variation_two:
 
     kh "C-can I?!"
 
+    menu:
+        "of course":
+            show kh_happy at left
+            kh "Thank you thank you thank you thank you thank you thank you thank you thank you thank you thank you  tha"
+            jump first_day_scene_one
+
+        "I’d appreciate it":
+            kh "I-I’ll do my best!"
+
+    jump first_day_scene_one
+
+
+label first_day_variation_three:
+    scene bg road with vpunch:
+        xzoom 1.6 yzoom 1.5
+    
+    "why do those damn witches demand a sacrifice anyway?" 
+    extend "\nDo they not stand for the same flag as the rest of us?\n" 
+    extend "Do they not care for their own countrywomen?\n"
+    extend "And surely whichever the sacrificial trope would also stop existing within their ranks. Something seems-"
+
+    #Crash sound effect
+    unknown "OW"
+    extend "STUPID POLE"
+
+    # metal pipe falling
+    "WHANG"
+
+    ys "????"
+
+    # metal pipe
+    "WHANG"
+
+    ys "what's going on"
+
+    scene bg sutpid pole:
+        "bg stupid pole.webp"
+        xzoom 1.9
+
+    show sd_angry at right
+    
+    show ys_sprite at left
+
+    sim "Sune Derei, your short fused friend"
+
+    sd "Who"
+
+    "*WHANG*"
+    # metal pipe
+
+    sd "Put this"
+
+    "*WHANG*"
+    # metal pipe
+
+    sd "Stupid fucking pole"
+
+    "*WHANG*"
+    # metal pipe
+
+    sd "in the middle of the sidewalk" 
+
+    ys "Sune Derei! Are you okay?"
+
+    show sd_blushing at right
+
+    sd "Y-Yuri-San! What are you d-doing here"
+
+    ys "I heard some concerning noises so I came to check"
+
+    sd "It’s nothing really,"
+    
+    hide sd_blushing
+    show sd_angry at right
+
+    extend "just this stupid pole of stupidity that some stupid idiot put in the middle of the sidewalk for some stupid reason."
+
+    menu:
+        "Be more careful of where your walking, you could get a concussion!":
+            hide sd_angry
+            show sd_sad
+            
+            sd "Your right, I'm sorry."
+    
+        "What a stupid pole":
+            hide sd_angry
+            show sd_happy at right
+
+            sd "I know right?!"
+
+    ys "Let’s get you to the nurses office, you might have gotten a concussion."
+
+    show sd_neutral at right
+
+    sd "But you're already late!"
+
+    menu:
+        "You’re much more important":
+            show sd_blushing at right
+            sd "O-oh"
+            extend " T-thank you!"
+
+        "Your right I need to get to class":
+            show sd_angry at right
+            
+            # Change the text smaller for grumbling
+            sd "I mean you could have been a little more persistent"
+
+            ys "What was that?"
+
+            hide sd_angry
+            show sd_blushing at right
+
+            sd "N-nothing!"
+
     jump first_day_scene_one
 
 # Second scene school where they arrive after the 3 meeting scenarios
 label first_day_scene_one:
-    scene bg black
-    " Off to the yuri club, of which you are president. Hip Hip Hooray for the President of Yuri"
+    scene highschool_front with fade
+
+    sim "After-school, Yuri Club meeting. The club of which you are president."
+
+    ys "I can't wait to lead the Yuri Girl Love Manga Club to another year of resounding success."
+
+    scene book_club with fade:
+        xzoom 3.0 yzoom 3.0
+
+    show ys_sprite at left
+
+    show kh_neutral at right
+
+    if day_one_chosen_variation == 1: 
+        sim "Kaorin Womenlover, your junior and head of the Secret Yuri San Fanclub"
+    elif day_one_chosen_variation == 3:
+        sim "Kaorin Womenlover, your junior and head of the Secret Yuri San Fanclub"
     
+    kh "Miss President I did so much Yuri research over the summer vacation!"
+
+    menu:
+        "I’d expect nothing less from you kaorin":
+            hide kh_neutral
+            show kh_blushing at right
+            pause(1)
+
+        "That’s some good dedication Kaorin. Keep at it and you’ll be leading this club after I graduate":
+            hide kh_neutral
+            show kh_sad at right
+
+            kh "oh yeah"
+            extend "Your leaving me behind"
+            
+            ys "you’ll be fine, its only for a year. You're going to the National Yuriversity too right?"
+
+            hide kh_sad
+            show kh_happy at right
+
+            kh "I’m going wherever you are, miss yuri san!"
+    
+    hide kh_neutral
+    hide kh_blushing
+    show kh_neutral at right
+
+    "*knock knock knock*"
+
+    show sd_neutral at center
+
+    sd "Hello Yuri-San. Hi Kaorin."
+
+    if day_one_chosen_variation == 1:
+        sim "Sune Derei, your short fused friend"
+    elif day_one_chosen_variation == 2:
+        sim "Sune Derei, your short fused friend"
+
+    ys "Hey!"
+    extend " Anyone seen Cere?"
+    
+    hide sd_neutral
+    show sd_exclimation at center
+    
+    sd "Oh she told me that she’s putting her foot down this year, she wants nothing to do with the Yuri club."
+
+    ys "she says that every year, I’ll go get her"
+
     scene bg school hallway with fade
 
-    ys " I cant wait to lead the Yuri Girl Love Manga Club to another year of resounding success "
+    show ys_sprite at left
+    show vc_neutral at right
+    
+    ys "Cere hurry up clubs starting"
+    
+    if day_one_chosen_variation == 2:
+        sim "Cere Dunoshesgay, your childhood bestfriend and closest compatriot"
+    elif day_one_chosen_variation == 3:
+        sim "Cere Dunoshesgay, your childhood bestfriend and closest compatriot"
 
-    scene bg book club room with fade
+    hide vc_neutral
+    show vc_angry at right
 
-    show kh happy at Position(xalign = 0.9, yalign = 0.5)
+    vc "I keep telling you! I definitely have no interest in Yuri! I’m not coming!"
 
-    kh "Q-queen Yuri!"
-    kh "I'm not worthy"
+    ys "Okay okay but don’t you want to come say high to Sune and Kaorin?"
 
-    ys "Its just president Kaorin. "
-    ys "This is a democracy."
-    ys "And all who love Wuh Luh Wuh are worthy. Even the most hateful of wretches may find comfort within these hallowed halls"
+    hide vc_angry
+    show vc_exclimation at right
 
-    "*knock knock*"
+    vc "Okay but I’m meeting them and leaving!"
 
-    sd "Is this the Anti-Stupid Pole of Stupidity club?"
+    ys "Sure sure."
+
+    scene book_club with fade:
+        xzoom 3.0 yzoom 3.0
+
+    show ys_sprite at left
+    show vc_neutral at center
+
+    show kh_neutral at right
+    show sd_neutral:
+        xalign 1.41
+
+    kh "Hi Miss Cere!"
+
+    sd "Where have you been?"
+
+    vc "I don’t want to join this year, I’m just dropping in to say hi."
+    extend "\nSo I guess I’ll be leaving now."
+
+    ys "Can't. Doors locked."
+    
+    hide vc_neutral
+    show vc_question
+
+    vc "What??"
+
+    ys "Door won't open, its locked."
+
+    hide vc_question
+    show vc_angry at center
+
+    vc "Who has the key then?"
+
+    ys "Uhh.."
+    extend "KAORIN! WINDOW! NOW!"
+
+    hide kh_neutral
+    show kh_blushing at right
+
+    scene bg window:
+        xzoom 0.5 yzoom 2
+
+    # Key flys here linux boy
+    show key at Transform(xalign=0.0, yalign=0.5)
+    with None
+
+    show key at Transform(xalign=1.0, yalign=0.5)
+    with move
+
+    scene book_club with fade:
+        xzoom 3.0 yzoom 3.0
+
+    show ys_sprite at left
+    show vc_angry at center
+
+    show kh_neutral at right
+    show sd_neutral:
+        xalign 1.41
+
+    ys "I actually have no idea where the key is really."
+
+    vc "I knew you would do this!"
+    extend " I don’t want to be in the Yuri club!" 
+    extend "\nI’ve never wanted to be in the Yuri club!"
 
     menu:
-        "Yes, it is":
+        "How come you always have the most detailed book reports then?":
+            hide vc_angry
+            show vc_blushing at center
             
-            # check this image
-            show fkds at Position(xalign = 0.5, yalign = 0.5)
+            vc "I just like literature!"
 
-            sd "That sign says I <3 Yuri."
+            ys "Uh-huh"
+            extend " Anyway it’s not even like a serious club anyway, its more like a place to hang out"
 
-            ys "were multitasking"
+            vc "That's what you always say!"
+        
+        "Please stay, it’ll be lonely without you":
+            hide vc_angry
+            show vc_blushing at center
+            
+            vc "I have to focus on my grades this year Yuri-San"
 
-            sd "I think im going to go-"
+            hide vc_blushing
+            show vc_sad at center
 
-            ys "PLEASE PLEASE PLEASE STAY"
-            ys "I finally became president of yuri but ill get demoted if we dont get any members"
+            extend "You know I need a scholarship for uni."
 
-            sd "okay? I guess?"
+            ys " I swear I’ll tutor you if you stay"
 
-        "No this is the Yuri club, but your not going anywhere":
-            sd "Says who?"
+            hide vc_sad
+            show vc_happy at center
 
-            kh "FOOL!"
-            kh "You speak to the president of Yuri!"
+            vc "your going to do that anyway though"
 
-            sd "Oh crap, do I have to bow or something?"
+    ys "Come onn"
 
-            ys "No your fine\n For Now."
+    hide vc_sad
+    hide vc_blushing
+    show vc_angry at center
 
-    vc "Yuri-san. you called me?" 
+    vc "Fine!"
 
-    show vin cere neutral at Position(xalign = 0.0, yalign = 0.5) 
+    ys "No new members this year either?" 
 
-    ys "Welcome to the Yuri club my childhood best friend"
+    hide vc_angry
+    show vc_neutral at center
 
-    vc "Uhh I don't like girls actually"
+    hide kh_neutral
+    show kh_sad at right
 
-    ys "Yeah, thats what they all say"
+    kh "Afraid not"
 
-    vc "I think im going to leave"
+    ys "Well I guess introductions are pointless then."
+    extend " We need to fundraise for our annual Yuri Exhibit though. Any ideas?"
+
+    hide kh_sad
+    show kh_exclimation at right
+
+    kh "We could do a bake sale!"
+
+    sd "I guess I could donate some of my Yuri collection, and we could host a book sale."
+
+    vc "I have work after school. Though my manager did mention she needs an extra pair of hands for this weekend."
+
 
     menu:
-        "can't, doors locked":
-            vc "Who has the key?"
+        "Prep a bake sale with Kaorin":
+            ys "We should do a bake sale."
+            extend " Me and Kaorin can bake the products and you two can help us sell them later"
 
-            show vin cere neutral
+            hide kh_exclimation
+            show kh_blushing at right
 
-            ys "Kaorin! Window! NOW"
+            kh "T-thank you!"
 
-            kh "Yes miss president!"
+            vc "Works for me"
 
-            hide vin cere neutral
-            hide kh
-            hide fkds
+            sd "Sure."
+            
+            $ chosen_sale_option = 1
 
-            scene bg window
+        "Sort through Sune Derei’s Yuri collection":
+            ys "A book sale sounds good"
 
-            # Key flys here linux boy
-            show key at Transform(xalign=0.0, yalign=0.5)
-            with None
+            hide sd_neutral
+            show sd_happy:
+                xalign 1.41
 
-            show key at Transform(xalign=1.0, yalign=0.5)
-            with move
-            ys "I have no clue where the keys are actually."
+            sd "Okay I’ll pick out some-"
 
-        "I love you":
-            vc "I love you too sister!"
+            ys "Not a chance. I’m coming with you and picking them out myself"
 
-            kh "Yowch"
+            hide sd_happy
+            show sd_angry:
+                xalign 1.41
 
-            sd "Yikes"
+            sd "What?"
 
-            ys "I'm working on it"
+            vc "You have very.. Interesting taste"
 
-            vc "Working on what?"
+            ys "We can’t sell your picks at a school event."
 
+            sd "Fine!"
 
-    scene bg book club room with fade
+            $ chosen_sale_option = 2
 
-    show kh happy at Position(xalign = 0.9, yalign = 0.5)
-    show fkds at Position(xalign = 0.5, yalign = 0.5)
-    show vin cere neutral at Position(xalign = 0.0, yalign = 0.5) 
+        "Work part time with Cere":
+            ys "I'll come help out at your job"
 
-    ys "On to more important matters!\nWhat Yuri Girl Love Manga are we reading this month?"
+            $ chosen_sale_option = 3
 
-    sd "Can we do the Green Yuri"
+    scene black with fade
 
-    kh "We always do the green yuri"
-
-    vc "GUys can I please leave"
+    sim "would you like to proceed to the next day, or start over and try a different route?"
 
     menu:
-        "Green Yuri again":
-            sd "I-its not like I want to though!"
+        "Next Day":
+            $day_number = 2
+            jump start
 
-        "Pink Yuri":
-            kh "I love the Pink Yuri!"
+        "Start over":
+            sim "Are you sure?"
+            menu:
+                "Yes":
+                    jump day_one_start
 
-    
-    ys "What if we did our own Yuri"
-
-    kh "Great idea miss president!"
-    
-    ys "That decides it. Yuri club we're researching our favourite yuri tropes tonight."
-
-    hide kh happy 
-    hide fkds 
-    hide vin cere 
-
-    # Fix the jump here
+                "No end the day":
+                    $day_number = 2
+                    jump start
