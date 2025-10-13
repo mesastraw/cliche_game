@@ -11,22 +11,22 @@ label day_one:
 
     "The year is 3127. Advances in Assisted Reproductive Technologies during the 28th century and several wars caused humanity to separate itself into three nations."
 
-    scene map_hetero:
+    scene map_hetero with fade:
         xzoom 0.7 yzoom 0.45
 
     "The Straight Empire."
 
-    scene map_yaoi:
+    scene map_yaoi with fade:
         xzoom 0.7 yzoom 0.45
 
     "The reclusive Yaoisreal"
 
-    scene map_yuri:
+    scene map_yuri with fade:
         xzoom 0.7 yzoom 0.45
 
     "And our great homeland, Yuristan."
 
-    scene map:
+    scene map with fade:
         xzoom 0.7 yzoom 0.45
 
     "Until two decades ago, the three nations remained balanced, each attending to their own affairs. But no longer. The leader of YaoIsreal, rumored to have the biggest forehead in all existence"
@@ -38,14 +38,16 @@ label day_one:
     
     "His latest creation was GayGas, a gas that made any male into an obedient puppet to the YaoIsreali cause, while also turning him into a raging homosexual."
 
-    scene map_yaoisreal:
+    scene map_yaoisreal with fade:
         xzoom 0.7 yzoom 0.45
 
     "The YaoIsreali air force let this gas loose all over the Straight Empire, and within weeks it collapsed."
     
-    scene black
 
     "As billions of refugees fled to Yuristan, you realized that you had to reinstate Yuristans military power, inorder to protect your new citizens as well as your old."
+
+    scene yuri witches with fade:
+        xzoom 0.5 yzoom 0.55
 
     "Yet, your predecessor had gutted Yuristans witch militia, reallocating the funds towards affordable housing."
 
